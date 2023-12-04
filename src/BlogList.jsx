@@ -1,9 +1,8 @@
 const BlogList = ({blogs, title}) => {
   // receives the prop blogs from the Home component
-
-  // ({}) destructures props to pull the specific properties straight into the component
+  //note ({}) destructures props to pull the specific properties straight into the component
   
-  // stores the prop blogs into blogs
+  // note stores the prop blogs into blogs
   // const blogs = props.blogs;
   // const title = props.title;
 
@@ -19,6 +18,6 @@ const BlogList = ({blogs, title}) => {
           </div>
         ))}
       </div>
-    );;
+    );
 }
 export default BlogList;

@@ -22,12 +22,20 @@ const Home = () => {
       author: "luigi",
       id: 3,
     },
+    {
+      title: "My new Store",
+      body: "lorem ipsum ...",
+      author: "mario",
+      id: 4,
+    },
   ]);
 
   //Passing blogs to the child component
   return (
     <div className="home">
       <BlogList blogs={blogs} title="All Blogs!" />
+      {/* //note Filter filters all elements that match the blog author mario */}
+      <BlogList blogs={blogs.filter((blog)=> blog.author === 'mario' )} title="Mario's blogs" />
       </div>
     )
 };
