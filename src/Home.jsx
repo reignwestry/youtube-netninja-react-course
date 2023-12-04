@@ -1,7 +1,8 @@
 import { useState } from "react";
+import BlogList from './BlogList';
 
 const Home = () => {
-  // note data array
+
   const [blogs, setBlogs] = useState ([
     {
       title: "My new website",
@@ -23,15 +24,12 @@ const Home = () => {
     },
   ]);
 
-  //note Map function loops through the array
-    return <div className="home">
-        {blogs.map((blog) => (
-            <div className="blog-preview" key={blog.id}>
-                <h2>{blog.title}</h2>
-                <p>Written by {blog.author}</p>
-          </div>
-      ))}
-  </div>;
+  //Passing blogs to the child component
+  return (
+    <div className="home">
+      <BlogList blogs={blogs} title="All Blogs!" />
+      </div>
+    )
 };
 
 export default Home;
