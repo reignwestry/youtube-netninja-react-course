@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import BlogList from "./BlogList";
 
 const Home = () => {
@@ -28,12 +28,20 @@ const Home = () => {
       id: 4,
     },
   ]);
-
   const handleDelete = (id) => {
     //Filters out all blogs not equal to the specified blog
     const newBlogs = blogs.filter((blog) => blog.id !== id);
     setBlogs(newBlogs); // saves the new blog list only to the current state
   };
+
+
+  //NOTE useEffect Hook = runs a function every render of the component
+  //note useEffect Hook is great for fetching data
+  useEffect(() => {
+  console.log('useEffect ran')
+})
+  
+
 
   //Passing blogs to the child component
   return (

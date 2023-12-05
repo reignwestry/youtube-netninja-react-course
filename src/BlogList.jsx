@@ -1,4 +1,4 @@
-const BlogList = ({blogs, title}) => {
+const BlogList = ({blogs, title, handleDelete}) => {
   // receives the prop blogs from the Home component
   //note ({}) destructures props to pull the specific properties straight into the component
   
@@ -15,6 +15,7 @@ const BlogList = ({blogs, title}) => {
           <div className="blog-preview" key={blog.id}>
             <h2>{blog.title}</h2>
             <p>Written by {blog.author}</p>
+          <button onClick={() => handleDelete(blog.id)}>Delete Blog</button>
           </div>
         ))}
       </div>
