@@ -1,12 +1,6 @@
-const BlogList = ({blogs, title}) => {
-  // receives the prop blogs from the Home component
-  //note ({}) destructures props to pull the specific properties straight into the component
-  
-  // note stores the prop blogs into blogs
-  // const blogs = props.blogs;
-  // const title = props.title;
+const BlogList = ({ blogs, title, handleDelete }) => {
 
-    // console.log('props, blogs ' + props, blogs)
+
     return (
       <div className="home">
         {/* //note Map function loops through the array */}
@@ -15,6 +9,7 @@ const BlogList = ({blogs, title}) => {
           <div className="blog-preview" key={blog.id}>
             <h2>{blog.title}</h2>
             <p>Written by {blog.author}</p>
+            <button onClick={() => handleDelete(blog.id)}>delete blog</button>
           </div>
         ))}
       </div>

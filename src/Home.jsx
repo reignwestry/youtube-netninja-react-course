@@ -30,10 +30,16 @@ const Home = () => {
     },
   ]);
 
+  //Removes the blog only in this state without permanently removing the blog
+  const handleDelete = (id) => {
+    const newBlogs = blogs.filter(blog => blog.id !== id)
+    setBlogs(newBlogs);
+  };
+
   //Passing blogs to the child component
   return (
     <div className="home">
-      <BlogList blogs={blogs} title="All Blogs!" />
+      <BlogList blogs={blogs} title="All Blogs!" handleDelete={handleDelete}/>
       {/* //note Filter filters all elements that match the blog author mario */}
       <BlogList blogs={blogs.filter((blog)=> blog.author === 'mario' )} title="Mario's blogs" />
       </div>
